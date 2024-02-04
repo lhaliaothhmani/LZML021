@@ -1,26 +1,35 @@
 html {
 
-    background-color: #ff0084
+    background-color: #ff0084;
+    font-size: 14px;
+}
+
+h1{ 
+    font-size: 40px; /*Texte augmenté à 40 pixels*/
+}
+
+h2{
+    font-size: 40px; /*Texte augmenté à 40 pixels*/ 
 }
 
 #page {
-    margin: auto
-    width: 600px
-    background-color: #ffc2d8
-    padding: 20px 20px 20px 20px 
-    border: 5px solid black 
+    margin: auto;
+    width: 600px;
+    background-color: #ffc2d8;
+    padding: 20px;
+    border: 5px solid black;
 }
 
-#class {
-    margin: auto
+.entete {
+    margin: auto;
 }
 
 #aboutme {
 
-margin: auto /*Elements centrés*/  
-color: solid black /*Couleur du texte: noir*/
+margin: auto; /*Elements centrés*/  
+color: solid black; /*Couleur du texte: noir*/
 }
 
 footer {
-    margin: auto 
+    margin: auto; 
 }
