@@ -1,8 +1,9 @@
+function syllabes(){}
 function analyserPoeme(){
-    // Récupération du texte du poème
+     // Récupération du texte du poème
     const poemeTexte = document.getElementById("poeme").value;
 
-    // Déclaration des variables’
+    // Tri des mots pour pouvoir les compter puis compte des occurences 
     const mots = poemeTexte.match(/\b\w+\b/g);
     const motsExclus = mots.filter(mot => !["le", "la", "les", "de", "des", "du", "au", "aux", "un", "une", "et", "ou", "est", "à", "je", "tu", "il", "elle", "nous", "vous", "ils", "elles"].includes(mot.toLowerCase()));
     const occurencesMots = motsExclus.reduce((acc, mot) => {
@@ -26,7 +27,7 @@ function analyserPoeme(){
     const nombreTotalStrophes = strophes.length;
     const classificationStrophes = {};
     strophes.forEach((strophe, index) => {
-        const nombreVers = stanza.split("\n").length;
+        const nombreVers = strophe.split("\n").length;
         if (classificationStrophes[nombreVers]) {
             classificationStrophes[nombreVers]++;
         } else {
@@ -46,6 +47,8 @@ function analyserPoeme(){
         }
     });
 
+
+
     // Affichage des résultats
     let resultat = "";
     resultat += `<h2>${poemeTexte.split("\n")[0]}</h2>`;
@@ -53,7 +56,8 @@ function analyserPoeme(){
     resultat += `<p>Richesse lexicale: ${richesseLexicale.toFixed(2)}%</p>`;
     resultat += `<p>Nombre de phrases: ${nombrePhrases}</p>`;
     resultat += `<p>Longueur moyenne des mots par phrase: ${longueurMoyenneMotParPhrase.toFixed(2)}</p>`;
-    resultat += `<p>Typologie des strophes: ${typologieStrophes}</p>`;
-    resultat += `<p>Typologie des vers: ${typologieVers}</p>`;
+    resultat += `<p>Typologie des strophes: ${classificationStrophes}</p>`;
+    resultat += `<p>Typologie des vers: ${classificationStrophes}</p>`;
     document.getElementById("resultats").innerHTML = resultat;
 }
+
