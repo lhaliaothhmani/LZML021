@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <link rel="shortcut icon" href="http://www.tal.univ-paris3.fr/plurital/logo.ico">
     <title>Lecture des données dans un fichier...</title>
-    <script type="text/javascript" language="javascript" src="code.js"></script>
+    <script type="text/javascript" language="javascript" src="code.js"> src="chartist.min.js"</script>
     <link rel="stylesheet" href="monstyle.css" />
 </head>
 
@@ -16,6 +16,15 @@
 
             <div id="page-wrapper">
                 <div>
+                     <div id="aide" style="display:none;">
+                        <p id="messageaide">Vous venez d'ouvrir la fonctionnalité d'aide !
+                        <br><br>
+   Grâce à cet outil vous pourrez analyser le texte de votre choix. Attention, ce texte doit être au format .txt
+   <br>Vous devez selectionner le texte de votre choix en cliquant sur "parcourir"
+   <br>
+   Une fois le texte téléchargé, vous pourrez avoir accès ci-dessous à sa segmentation, ainsi qu'aux résultats version graphiques <br>
+   <br>
+   
                     <span>
                         <label for="fileInput" class="btn"><small>Sélectionner un fichier au format .txt
                                 :</small></label>
@@ -43,16 +52,11 @@
                     </small>
                     <br />
                     <br />
-                    <button onclick="alert('bonjour');"><span>Bonjour</span></button>
+                    <button onclick="alert('Bienvenue sur ma page');"><span>Bonjour</span></button>
                     <br />
                     <br />
-                    <button class="submit" id="Segmentation" onclick=><span>Segmentation</span></button>
-                    <button class="submit" onclick="alert('Je ne fais rien, changez-moi !');"><span>action 1</span></button>
-                    <button class="submit" onclick="alert('Je ne fais rien, changez-moi !')"><span>action 2</span></button>
-                    <button class="submit" onclick="alert('Je ne fais rien, changez-moi !')"><span>action 3</span></button>
-                    <button class="submit" onclick="alert('Je ne fais rien, changez-moi !')"><span>action 4</span></button>
-                    <button class="submit" onclick="alert('Je ne fais rien, changez-moi !')"><span>action 5</span></button>
-                    <button class="submit" onclick="alert('Je ne fais rien, changez-moi !')"><span>action 6</span></button>
+                    <button class="submit" onclick="sort_words()"><span>Segmentation</span></button>
+                    <button class="submit" onclick="graphiqueBarres();"><span>Visualisation coocurrents - Graphique barres</span></button>
                 </p>
             </div>
             <div id="logger" style="width:100%"></div>
@@ -60,12 +64,10 @@
             <div id="Global">
                 <div id="fileDisplayArea"></div>
                 <div id="page-analysis"></div>
-                <div id="totalWords"></div>
-                <div id="textContent"></div>
             </div>
-
             </div>
         </div>
     </div>
 </body>
 </html>
+
